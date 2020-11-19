@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Party.js example</title>
+		<style>
+			:root {
+				--default-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.5);
+				--default-border-radius: 8px;
+				--default-spacer: 30px;
+			}
+
+			* {
+				margin: 0;
+				padding: 0;
+				font-family: Helvetica, sans-serif;
+			}
+			main {
+				max-width: 800px;
+				margin: var(--default-spacer) auto;
+				padding: var(--default-spacer);
+				border-radius: var(--default-border-radius);
+				box-shadow: var(--default-shadow);
+				text-align: center;
+			}
+			main p {
+				padding: 0.9rem;
+			}
+			button {
+				margin-top: var(--default-spacer);
+				font-size: 180%;
+				border-radius: 6px;
+				padding: 0.3rem 0.9rem;
+			}
+			pre code {
+				background-color: #222222;
+				font-family: monospace;
+				color: #fff;
+				display: block;
+				text-align: left;
+				padding: var(--default-spacer);
+				box-shadow: var(--default-shadow);
+				border-radius: var(--default-border-radius);
+			}
+		</style>
+	</head>
+
+	<body>
+		<main>
+			<h1>Confetti Example</h1>
+			<p>Exploring Confetti options. in this example I'm looking at party.js</p>
+			<p>
+				<button onclick="waitToParty()">Confetti 🎉</button>
+			</p>
+			<pre><code>
+    let siteColors = ['#0A9F8E', '#E5F7F7', '#009EE0', '#0B6B6F'];
+
+    party.element(document.querySelector('body'), {
+        count: party.variation(300, 0.5),
+        angleSpan: party.minmax(60, 120),
+        spread: 360,
+        size: 16,
+        color: siteColors,
+        lightning: true,
+    });</code></pre>
+		</main>
+	</body>
+	<script src="party.min.js"></script>
+	<script>
+		let siteColors = ['#0A9F8E', '#E5F7F7', '#009EE0', '#0B6B6F'];
+		function waitToParty() {
+			party.element(document.querySelector('body'), {
+				count: party.variation(300, 0.5),
+				angleSpan: party.minmax(60, 120),
+				spread: 360,
+				size: 16,
+				color: siteColors,
+				lightning: true,
+			});
+		}
+		setTimeout(waitToParty, 2000);
+	</script>
+</html>
